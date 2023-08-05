@@ -76,7 +76,7 @@ Voici les différentes variables que vous pouvez placer:
 
 Voici la liste des clients que vous pouvez utiliser gratuitement:
 
-- Plugin Minecraft Spigot 1.8.9 (par [EliottBvl](https://github.com/EliottBovel)): En cours de mise en ligne.
+- Plugin Minecraft Spigot 1.8.9 (par [EliottBvl](https://github.com/EliottBovel)): [Lien GitHub](https://github.com/EliottBovel/MumbleLinkClient/tree/master)
 
 Si vous en développez d'autres, n'hésitez pas à me le dire, je les ajouterais !
 
