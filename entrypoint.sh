@@ -1,5 +1,4 @@
 #!/bin/bash
 
 murmurd
-python3 main.py
-bash
+python3 mumble_link_core/main.py
