@@ -1,0 +1,16 @@
+[project]
+name = "mumble_link_core"
+authors = [
+    { name = "Eliott Bovel" }
+]
+description = "Program to create, save and manage mumble servers and users"
+readme = "README.md"
+classifiers = [
+    "Environment :: Console",
+    "Environment :: No Input/Output (Daemon)",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: French",
+    "Programming Language :: Python :: 3"
+]
+dependencies = ["zeroc-ice"]
+version = "1.0"

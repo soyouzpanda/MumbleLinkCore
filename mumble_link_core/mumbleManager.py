@@ -24,10 +24,11 @@ class MumbleManager:
             self.idata.properties = self.props
 
             self.communicator = Ice.initialize(self.idata)
-            self.base = self.communicator.stringToProxy("Meta:tcp -h " + configManager.read("MURMUR", "ip", "127.0.0.1") + " -p " + configManager.read("MURMUR", "port", "6502"))
+            self.base = self.communicator.stringToProxy("Meta:tcp -h 127.0.0.1 -p 6502")
 
             self.meta = Murmur.MetaPrx.checkedCast(self.base)
-        except:
+        except Exception as e:
+            print(e)
             print("Error during ICE connection.")
             self.close()
             Utils.close()

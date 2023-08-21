@@ -8,8 +8,8 @@ RUN     apt-get install -y python3 python3-dev python3-pip gcc g++ libssl-dev li
 RUN     mkdir -p /mumble
 WORKDIR /mumble
 
-ADD     requirements.txt .
-RUN     pip3 install -r requirements.txt --break-system-packages
+ADD     pyproject.toml .
+RUN     pip3 install . --break-system-packages
 
 ADD     . .
 
