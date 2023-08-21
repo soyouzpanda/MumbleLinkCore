@@ -1,25 +1,24 @@
 [MURMUR]
-ice_file=Murmur.ice
-ip=localhost
+ip="localhost"
 port=6502
 
 [MUMBLE]
-default_name=MumbleLink par EliottBvl.
-superuser_password=CHANGEME
-server_password=CHANGEMETOO
-public_ip=0.0.0.0
+default_name="MumbleLink par EliottBvl."
+superuser_password="CHANGEME"
+server_password="CHANGEMETOO"
+public_ip="0.0.0.0"
 first_port=64738
 
 [SOCKET]
-ip=127.0.0.1
+ip="127.0.0.1"
 port=751
 
 [WEB]
-ip=127.0.0.1
+ip="127.0.0.1"
 port=80
 
 [AUTH]
-api-key=CHANGEMETOO
+api-key="CHANGEMETOO"
 
 [LOG]
 create=true

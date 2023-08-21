@@ -1,21 +1,12 @@
+import logging
 import Ice
-
-from configManager import configManager
-from utils import Utils
+import Murmur
+import config_manager
 
 
 class MumbleManager:
-
-    murmur = None
-
-    def __init__(self):
-        try:
-            Ice.loadSlice('', ['-I' + Ice.getSliceDir(), configManager.read("MURMUR", "ice_file", "Murmur.ice")])
-            import Murmur
-            MumbleManager.murmur = Murmur
-        except:
-            print("Error during loading ICE slice.")
-            Utils.close()
+    def __init__(self, config: config_manager.ConfigManager):
+        self.config = config
 
         try:
             self.props = Ice.createProperties()
@@ -24,14 +15,14 @@ class MumbleManager:
             self.idata.properties = self.props
 
             self.communicator = Ice.initialize(self.idata)
-            self.base = self.communicator.stringToProxy("Meta:tcp -h 127.0.0.1 -p 6502")
+            self.base = self.communicator.stringToProxy(
+                f"Meta:tcp -h {self.config.read('MURMUR', 'ip', '127.0.0.1')} -p {self.config.read('MURMUR', 'port', '6502')}")
 
             self.meta = Murmur.MetaPrx.checkedCast(self.base)
-        except Exception as e:
-            print(e)
-            print("Error during ICE connection.")
+        except Ice.Exception:
+            logging.critical("Cannot open connection with Murmur server")
             self.close()
-            Utils.close()
+            raise RuntimeError
 
     def clear(self):
         servers = self.meta.getAllServers()
@@ -42,4 +33,3 @@ class MumbleManager:
 
     def close(self):
         self.communicator.destroy()
-
