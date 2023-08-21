@@ -1,9 +1,4 @@
 /note for murmur.ini.txt
 /venv/
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/vcs.xml
-/.idea/.gitignore
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/MumbleLinkCore.iml
+/.idea/
+/test/
