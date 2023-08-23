@@ -2,3 +2,4 @@
 /venv/
 /.idea/
 /test/
+/mumble_link_core/__pycache__/
