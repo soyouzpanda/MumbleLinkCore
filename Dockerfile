@@ -3,13 +3,10 @@ ARG     DEBIAN_FRONTEND=noninteractive
 
 RUN     apt-get update
 RUN     apt-get install -y mumble-server # mumble-server
-RUN     apt-get install -y python3 python3-dev python3-pip gcc g++ libssl-dev libbz2-dev # zeroc-ice and project dependencies
+RUN     apt-get install -y python3 python3-zeroc-ice # projects dependencies
 
 RUN     mkdir -p /mumble
 WORKDIR /mumble
-
-ADD     pyproject.toml .
-RUN     pip3 install . --break-system-packages
 
 ADD     . .
 
